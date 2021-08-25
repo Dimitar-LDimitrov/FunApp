@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FunApp.Web.Extentions
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, GlobalConstants.AdministratorRole))
+@*@if(User.IsInRole(GlobalConstants.AdministratorRole))*@
+{
+<li class="nav-item dropdown show">
+        @*Менюто Admin се разминава с останалите менюта. На долния ред е оправено.
+        <a class="btn dropdown-toggle" href="#" data-toggle="dropdown">Admin</a>*@
+    <a class="dropdown-toggle nav-link text-dark" href="#" data-toggle="dropdown">Admin</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" asp-controller="Categories" asp-action="All">Category</a>
+        <a class="dropdown-item" asp-controller="Styles" asp-action="All">Style</a>
+        @*Може да се постави underline(черта под някой ред на dropdown-menu-то)
+        <div class="dropdown-divider"></div>*@
+        <a class="dropdown-item" href="#">Song</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" asp-area="Admin" asp-controller="Jokes" asp-action="Index">Jokes</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" asp-controller="Users" asp-action="Index">Users</a>
+    </div>
+</li>
+}

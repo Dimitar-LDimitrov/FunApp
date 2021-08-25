@@ -1,0 +1,9 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Delete Style";
+}
+
+<h2>Are you sure you want to delete this style?</h2>
+<a href="/styles/all" class="btn btn-dark">Back</a>
+<a href="/styles/destroy/@Model" class="btn btn-danger">Confirm Delete</a>

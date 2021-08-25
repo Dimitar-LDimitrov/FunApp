@@ -1,0 +1,50 @@
+﻿@model StyleFormModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Style</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            @*asp-items="@Model.Styles"*@
+            <div class="form-group">
+                <label asp-for="Title">Music Category</label>
+                <select asp-for="Title" class="form-control"></select>
+                <span asp-validation-for="Title" class="form-text text-muted text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <input asp-for="CategoryId" class="form-control" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>*@
+            @* </div>
+                <partial name="_DropdownPartial" />
+                        <div class="form-group">*@
+            @*<label asp-for="AllParts"></label>
+                <select asp-for="SelectedParts" asp-items="Model.AllParts" multiple class="form-control" style="height: 170px"></select>
+                <small>* Hold "Ctrl" to select multiple parts</small>*@
+            @*</div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

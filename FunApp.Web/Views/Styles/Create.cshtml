@@ -1,0 +1,27 @@
+﻿@model Styles
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" required class="form-control" />
+        <span asp-validation-for="Title" class="form-text text-muted text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryId">Category</label>
+        <select asp-for="CategoryId" asp-items="Model.Categories" class="form-control">
+            <option value="">--Please select a Category of Music--</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="form-text text-muted text-danger"></span>
+    </div>
+    <div>
+        <input class="btn btn-success" type="submit" value="Save Style" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="All" asp-route-categoryId="@Model.CategoryId">Back</a>
+</div>
+
+@section Scripts {
+    @Html.Partial("_ValidationScriptsPartial")
+}

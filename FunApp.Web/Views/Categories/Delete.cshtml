@@ -1,0 +1,9 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Delete Category";
+}
+
+<h2>Are you sure you want to delete this Category?</h2>
+<a href="/categories/all" class="btn btn-dark">Back</a>
+<a href="/categories/destroy/@Model" class="btn btn-danger">Confirm Delete</a>

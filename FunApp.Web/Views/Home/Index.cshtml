@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<canvas id="gc" width="400" height="400"></canvas>
+<br />
+<h3>Press "Right Button"</h3>
+
+<div class="modal fade" id="UserLoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <partial name="_UserLoginPartial" />
+</div>
+
+@section Scripts
+{
+    <script src="~/js/UserLogin.js"></script>
+}

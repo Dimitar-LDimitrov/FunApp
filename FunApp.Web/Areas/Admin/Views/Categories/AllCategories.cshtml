@@ -1,0 +1,44 @@
+﻿@model CategoryPageListingModel
+
+@{
+    ViewData["Title"] = "All Categories";
+}
+
+<h1>All Categories</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThumbnailImagePath)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Categories) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThumbnailImagePath)
+            </td>
+            <td>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-controller="Styles" asp-action="Index" asp-route-categoryId="@item.Id">Update Items</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

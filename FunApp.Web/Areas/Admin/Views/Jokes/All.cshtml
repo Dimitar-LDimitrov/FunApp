@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FunApp.Services.Models.Joke.BasicJokeModel>
+
+@{
+    ViewData["Title"] = "All Jokes";
+}
+
+<h1>Вицове</h1>
+
+<p>
+    <a asp-action="Create">Публикувай Виц</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Likes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Likes)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+@*<h2>Вицове</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Likes</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var joke in Model)
+        {
+            <tr>
+                <td>@joke.Name</td>
+                <td>@joke.Description</td>
+                <td>@joke.Likes</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
