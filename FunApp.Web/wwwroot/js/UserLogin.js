@@ -44,6 +44,11 @@
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
+                PresentClosableBootstrapAlert("#alert_placeholder_login", "danger", "Error!", errorText);
+
+                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
             }
         });
     }

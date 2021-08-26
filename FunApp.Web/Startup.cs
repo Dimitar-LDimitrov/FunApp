@@ -39,7 +39,7 @@ namespace FunApp.Web
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                 })
-                .AddRoles<IdentityRole>()    
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<FunAppDbContext>();
 
             services.AddMvc(option =>

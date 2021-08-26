@@ -23,10 +23,12 @@
                     .Run(async () =>
                     {
                         var adminName = GlobalConstants.AdministratorRole;
+                        var userRole = GlobalConstants.RegularRole;
 
                         var roles = new[]
                         {
-                            adminName
+                            adminName,
+                            userRole
                         };
 
                         foreach (var role in roles)
